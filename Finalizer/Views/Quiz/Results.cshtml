@@ -1,0 +1,42 @@
+﻿@model Finalizer.Data.Product
+@{
+    ViewData["Title"] = "Results";
+}
+<div class="row">
+    <div class="col-6 col-sm-4"><h4>Here are the results of your quiz!</h4></div>
+    
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <img class="img-fluid" src="@(Model.ProductImages.Any() ? Model.ProductImages.First().Url : "/images/noImage.png")" alt="@(Model.ProductImages.Any() && !string.IsNullOrEmpty(Model.ProductImages.First().AltText) ? Model.ProductImages.First().AltText : Model.Name)" />
+        </div>
+        <div class="col-6 col-sm-8 p-2 border rounded bg-dark text-light">
+
+            <div class="row">
+                <div class="col">
+                    <h2>@Model.Name</h2>
+                </div>
+                <div class="col">
+                    <h3 class="text-right">@Model.Price.ToString("c")</h3>
+                </div>
+            </div>
+            <p>@Model.Description</p>
+            <form method="post">
+                <div class="form-row">
+                    <div class="col">
+                        <label for="color">Color</label>
+                        <select name="color" class="form-control">
+                            @foreach (var c in Model.ProductColors)
+                            {
+                                <option value="@c.ID">@c.Color</option>
+                            }
+                        </select>
+                    </div>
+                  
+                </div>
+                <input class="btn btn-light btn-block my-2" type="submit" value="Add To Cart" />
+            </form>
+        </div>
+    </div>
+
+
+</div>

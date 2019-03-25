@@ -1,0 +1,15 @@
+﻿@model ABCReportModel
+@{
+    ViewData["Title"] = "ABC REPORT";
+}
+<div class="container-fluid">
+<h1>ABC MFG Order Form</h1> <h3>August 30, 2003</h3> 
+</div>
+<h5>Order #: @Model.OrderID</h5>
+<p>@Model.Name</p>   
+<p>@Model.BizSt              Shipping Address: @Model.ShipSt</p>
+<p>@Model.BizCity              Shipping Address: @Model.ShipCity</p>
+<p>@Model.BizState              Shipping Address: @Model.ShipState</p>
+<p>@Model.BizZip              Shipping Address: @Model.ShipZip</p>
+
+
