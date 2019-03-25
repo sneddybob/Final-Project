@@ -11,10 +11,10 @@ elements of a full stack web application.
 ## Getting Started
 - Clone the application from GitHub.
 - Download and Install Visual Studio Community and Configure for the DotNetCore Development workspace.
-- Make sure to download the .NET Core 2.1 SDK or runtime libraries
-- Double Click the .sln file to open the project
-- Initialize the connection string path from the CMD line (see below : Connection String Initialization)
-- Hit "Play" to run
+- Make sure to download the .NET Core 2.1 SDK or runtime libraries.
+- Double Click the .sln file to open the project.
+- Initialize the connection string path from the CMD line (see below : Connection String Initialization).
+- Hit "Play" to run.
 
 ### Connection String Initialization
 
