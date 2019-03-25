@@ -6,7 +6,7 @@ This is Bob Snediker's final project for Coding Temple's Feb 2019 .NET bootcamp.
 SQL edited via the Microsoft SMS and Bootstrap dependecy for CSS/HTML formatting.  It is meant to demonstrate some of the core
 elements of a full stack web application.
 
-[guitar image](/Finalizer/wwwroot/images/es355redSM.png)
+(/Finalizer/wwwroot/images/es355redSM.png)
 
 ## Getting Started
 - Clone the application from GitHub.
