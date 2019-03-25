@@ -13,4 +13,11 @@ elements of a full stack web application.
 - Download and Install Visual Studio Community and Configure for the DotNetCore Development workspace.
 - Make sure to download the .NET Core 2.1 SDK or runtime libraries
 - Double Click the .sln file to open the project
+- Initialize the connection string path from the CMD line (see below : Connection String Initialization)
 - Hit "Play" to run
+
+### Connection String Initialization
+
+The ABCReport controller is configured to communicate with a database with the ABC Manufacturing Database Schema.  The connection string must be set prior to using the report.  From the command line:
+
+`dotnet user-secrets set "ConnectionStrings:ABCConnection" "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ABCMFGDB2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"`
