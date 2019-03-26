@@ -64,7 +64,7 @@ using Finalizer.Models;
             WriteLiteral("\r\n<div class=\"home-gif\" style=\"text-align:center\" >\r\n   <div class=\"text-danger\"> <h1>This is the HOMEPAGE of finalizer</h1>\r\n    ");
             EndContext();
             BeginContext(175, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2103256b57c14cff9f5620a2a35dd074", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d45b418e0f8a4e45ac133e212737667b", async() => {
                 BeginContext(239, 8, true);
                 WriteLiteral("Shop Now");
                 EndContext();
@@ -89,7 +89,7 @@ using Finalizer.Models;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(257, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7700d0b40044afbb961ff8eb9445caf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5ffa4b401234db3a8da1469a2711b4d", async() => {
                 BeginContext(322, 14, true);
                 WriteLiteral("Take Our Quiz!");
                 EndContext();

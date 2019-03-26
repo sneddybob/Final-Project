@@ -78,3 +78,13 @@ C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Finalizer.Views
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Finalizer.dll
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Finalizer.pdb
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Finalizer.csproj.CopyComplete
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Create.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Delete.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Details.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Edit.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Categories\Index.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Products\Create.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Products\Delete.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Products\Details.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Products\Edit.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Products\Index.g.cshtml.cs
