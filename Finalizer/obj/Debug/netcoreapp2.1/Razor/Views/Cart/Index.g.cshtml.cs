@@ -82,7 +82,7 @@ Write(ViewData["Message"]);
             WriteLiteral("</h3>\r\n\r\n<p>Use this area for CART.</p>\r\n");
             EndContext();
             BeginContext(134, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5dbb1cbd38ff4afca550b0dacbb4c51e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e67b56022fd949fab83fed772f11aca5", async() => {
                 BeginContext(178, 17, true);
                 WriteLiteral("Go Shop some more");
                 EndContext();
@@ -106,7 +106,7 @@ Write(ViewData["Message"]);
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(201, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c8a1a9cc8aa46368a9f4be57c864dcf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ce5b2e4a9b544dc8cd0b5dbdfd697b9", async() => {
                 BeginContext(249, 19, true);
                 WriteLiteral("Proceed to Checkout");
                 EndContext();

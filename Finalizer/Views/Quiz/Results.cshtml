@@ -5,7 +5,7 @@
 <div><h1>Here is the guitar that should match your Rockstar persona!</h1></div>
 <div class="row">
     <div class="col-6 col-sm-4"><h4>Here are the results of your quiz!</h4></div>
-    
+
     <div class="row">
         <div class="col-6 col-sm-4">
             <img class="img-fluid" src="@(Model.ProductImages.Any() ? Model.ProductImages.First().Url : "/images/noImage.png")" alt="@(Model.ProductImages.Any() && !string.IsNullOrEmpty(Model.ProductImages.First().AltText) ? Model.ProductImages.First().AltText : Model.Name)" />
@@ -32,12 +32,21 @@
                             }
                         </select>
                     </div>
-                  
+
                 </div>
                 <input class="btn btn-light btn-block my-2" type="submit" value="Add To Cart" />
             </form>
         </div>
     </div>
-
+    <div>
+        <h3>Reviews</h3>
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="row">
+                <div class="col-4"><h1>@review.Rating</h1></div>
+                <div class="col-8"><blockquote>@review.Text<cite>@review.UserID</cite></blockquote></div>
+            </div>
+        }
+    </div>
 
 </div>
