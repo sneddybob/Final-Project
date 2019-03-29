@@ -6,9 +6,11 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 body {
-    /*padding-top: 50px;
-    padding-bottom: 20px;*/
+   margin:0px;
+   padding:0px;
+   
 }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -16,34 +18,98 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.box2 {
+    /*height: 100%;*/
+    width: 80vw;
+    background-color: rgba(252, 255, 0, 0.85);
+    opacity: .4;
+    mix-blend-mode: lighten;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    top: 27vh;
+    /*left:10vw;*/
 }
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.box1 {
+    height: auto;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    z-index:10;
+    content: '';
+    /*height: 100%;*/
+    width: 80vw;
+    background-color: cyan;
+    opacity: .4;
+    top: 27vh;
+    mix-blend-mode: lighten;
+    transition:all 500ms ease-out;
 }
+    .boxPath {
+    -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+    }
+    .boxPath:hover {
+      -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+    }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
+
+    /* Carousel */
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    /* Make .svg files in the carousel display properly in older browsers */
+    .carousel-inner .item img[src$=".svg"] {
+        width: 100%;
+    }
+    /* QR code generator */
+    #qrCode {
+        margin: 15px;
+    }
+    /* Hide/rearrange for smaller screens */
+    @media screen and (max-width: 767px) {
+        /* Hide captions */
+        .carousel-caption {
         display: none;
     }
    
 }
 .home-gif {
-    background-image: url('/images/homepageGIF.gif');
-    height: 82vh;
-    width: 100%;
-    background-size: cover;
+      
+    /*width: 100%;*/
+    /*background-size: contain;
+    display: flex;
+    align-items: center;*/
 }
+
+.gridlayout {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+
+/*test purposes
+.shape {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+    background: rgba(0,160,250, .6);
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150px;
+    text-align: center;
+    color: #eee;
+    transition: all 500ms ease-out;
+}
+.polygon {
+    -webkit-clip-path: polygon(
+    /* X and Y points */
+    0 30%, 30% 0, 70% 0, 100% 70%, 70% 100%, 0 100% );
+}
+
+    /*.polygon:hover {
+        -webkit-clip-path: polygon(
+        /* X and Y points */
+        0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100% );
+    }*/

@@ -1,23 +1,30 @@
 ﻿@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using Finalizer.Data
+@inject SignInManager<RegisteredUser> SignInManager
+@inject UserManager<RegisteredUser> UserManager
 
 @{
     ViewData["Title"] = "Home Page";
 }
+<body>
+    <div style="text-align:center">
+        <h1>Are you ready to rock?</h1>
+        
+            <div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-controller="shop" asp-action="index" class="text-danger">Shop Now</a>
+            }
+            else
+            {
+                <a asp-controller="quiz" asp-action="index" class="text-primary">Take Our Quiz!</a>
+            }
 
-<div class="home-gif" style="text-align:center">
-    <div class="text-danger">
-        <h1>This is the HOMEPAGE of finalizer</h1>
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <a asp-controller="shop" asp-action="index" class="text-danger">Shop Now</a>
-        }
-        else
-        {
-            <a asp-controller="quiz" asp-action="index" class="text-primary">Take Our Quiz!</a>
-        }
+        </div>
+            <div class="gridlayout">
+                <div class="box1 boxPath"><img src="~/images/es355home.png" class="img-fluid"></div>
+                <div class="box2"><img class="img-fluid" src="~/images/es355home.png"></div>
+            </div>
 
     </div>
-</div>
+</body>

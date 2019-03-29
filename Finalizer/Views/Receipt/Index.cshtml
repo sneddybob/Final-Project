@@ -1,6 +1,26 @@
-﻿@{
+﻿@model Finalizer.Data.Order
+@{
     ViewData["Title"] = "Checkout";
 }
-<h2>@ViewData["Title"]</h2>
 
-<p>Receipt Index</p>
+@if (Model != null && Model.ContactEmail.Length > 0)
+{
+<div>
+
+    <h1>Thank you @Model.ContactName for placing your order!</h1>
+    <h4>Your order number is : @Model.ID</h4>
+    @foreach(var sub in Model.OrderItems)
+    {
+    <p>Your order of @sub.Name was placed on @Model.OrderDate</p>
+    }
+    <p>We have sent a confirmation email to : @Model.ContactEmail</p>
+
+
+
+</div>
+}
+else
+{
+    <div class="alert alert-warning"> There was a problem =( </div>
+}
+

@@ -19,6 +19,46 @@ namespace Finalizer.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Finalizer.Data.Cart", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<Guid>("CookieIdentifier");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("Finalizer.Data.CartItem", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CartID");
+
+                    b.Property<int?>("ProductColorID");
+
+                    b.Property<int>("ProductID");
+
+                    b.Property<decimal>("ProductPrice");
+
+                    b.Property<int>("Quantity");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CartID");
+
+                    b.HasIndex("ProductColorID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("Finalizer.Data.Category", b =>
                 {
                     b.Property<int>("ID")
@@ -34,6 +74,69 @@ namespace Finalizer.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Finalizer.Data.Order", b =>
+                {
+                    b.Property<string>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ContactEmail");
+
+                    b.Property<string>("ContactName");
+
+                    b.Property<string>("ContactPhoneNumber");
+
+                    b.Property<string>("OrderDate");
+
+                    b.Property<string>("RegisteredUserId");
+
+                    b.Property<string>("ShippingCity");
+
+                    b.Property<string>("ShippingCountry");
+
+                    b.Property<string>("ShippingPostalCode");
+
+                    b.Property<string>("ShippingRegion");
+
+                    b.Property<string>("ShippingStreet1");
+
+                    b.Property<string>("ShippingStreet2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("RegisteredUserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Finalizer.Data.OrderItem", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("OrderId");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("ProductID");
+
+                    b.Property<int>("Quantity");
+
+                    b.Property<string>("Size");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Finalizer.Data.Product", b =>
@@ -71,7 +174,7 @@ namespace Finalizer.Data.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ProductColor");
+                    b.ToTable("ProductColors");
                 });
 
             modelBuilder.Entity("Finalizer.Data.ProductImage", b =>
@@ -90,7 +193,7 @@ namespace Finalizer.Data.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ProductImage");
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("Finalizer.Data.ProductSize", b =>
@@ -120,6 +223,8 @@ namespace Finalizer.Data.Migrations
 
                     b.Property<int>("Rating");
 
+                    b.Property<string>("RegisteredUserId");
+
                     b.Property<string>("Text");
 
                     b.Property<string>("UserID");
@@ -128,7 +233,9 @@ namespace Finalizer.Data.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("Review");
+                    b.HasIndex("RegisteredUserId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -185,6 +292,9 @@ namespace Finalizer.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -224,6 +334,8 @@ namespace Finalizer.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -296,6 +408,51 @@ namespace Finalizer.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Finalizer.Data.RegisteredUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<int?>("CartID");
+
+                    b.HasIndex("CartID")
+                        .IsUnique()
+                        .HasFilter("[CartID] IS NOT NULL");
+
+                    b.ToTable("RegisteredUser");
+
+                    b.HasDiscriminator().HasValue("RegisteredUser");
+                });
+
+            modelBuilder.Entity("Finalizer.Data.CartItem", b =>
+                {
+                    b.HasOne("Finalizer.Data.Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartID");
+
+                    b.HasOne("Finalizer.Data.ProductColor", "ProductColor")
+                        .WithMany()
+                        .HasForeignKey("ProductColorID");
+
+                    b.HasOne("Finalizer.Data.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Finalizer.Data.Order", b =>
+                {
+                    b.HasOne("Finalizer.Data.RegisteredUser", "RegisteredUser")
+                        .WithMany()
+                        .HasForeignKey("RegisteredUserId");
+                });
+
+            modelBuilder.Entity("Finalizer.Data.OrderItem", b =>
+                {
+                    b.HasOne("Finalizer.Data.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId");
+                });
+
             modelBuilder.Entity("Finalizer.Data.Product", b =>
                 {
                     b.HasOne("Finalizer.Data.Category", "Category")
@@ -334,6 +491,10 @@ namespace Finalizer.Data.Migrations
                         .WithMany("Reviews")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Finalizer.Data.RegisteredUser")
+                        .WithMany("Reviews")
+                        .HasForeignKey("RegisteredUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -379,6 +540,13 @@ namespace Finalizer.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Finalizer.Data.RegisteredUser", b =>
+                {
+                    b.HasOne("Finalizer.Data.Cart", "Cart")
+                        .WithOne("RegisteredUser")
+                        .HasForeignKey("Finalizer.Data.RegisteredUser", "CartID");
                 });
 #pragma warning restore 612, 618
         }

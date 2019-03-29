@@ -119,7 +119,7 @@ WriteAttributeValue("", 257, Model.ProductImages.Any() && !string.IsNullOrEmpty(
             WriteLiteral("</p>\r\n        ");
             EndContext();
             BeginContext(825, 597, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95292fd1792b46c7b4f90bc634d9440a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "938dd3d50545403199c25cf32e08dd34", async() => {
                 BeginContext(845, 191, true);
                 WriteLiteral("\r\n            <div class=\"form-row\">\r\n                <div class=\"col\">\r\n                    <label for=\"color\">Color</label>\r\n                    <select name=\"color\" class=\"form-control\">\r\n");
                 EndContext();
@@ -133,7 +133,7 @@ WriteAttributeValue("", 257, Model.ProductImages.Any() && !string.IsNullOrEmpty(
                 WriteLiteral("                            ");
                 EndContext();
                 BeginContext(1156, 39, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b6abc17e4854d6c994e0d8f1440b02b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ff3123a456747f9a7bd9ad6316d539c", async() => {
                     BeginContext(1179, 7, false);
 #line 28 "C:\Users\Bob\Desktop\Finalizer\Finalizer\Views\Shop\Details.cshtml"
                                              Write(c.Color);
