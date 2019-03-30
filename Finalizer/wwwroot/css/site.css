@@ -12,6 +12,13 @@ body {
 }
 
 
+.container-fluid{
+    margin-right:.5px;
+    margin-left:.5px;
+    padding:0px;
+}
+
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -19,10 +26,10 @@ body {
     padding-right: 15px;
 }
 .box2 {
-    /*height: 100%;*/
-    width: 80vw;
-    background-color: rgba(252, 255, 0, 0.85);
-    opacity: .4;
+    height: 100%;
+    /*width: 80vw;*/
+    background-color: #4e5083;
+    
     mix-blend-mode: lighten;
     grid-row-start: 1;
     grid-column-start: 1;
@@ -36,18 +43,20 @@ body {
     z-index:10;
     content: '';
     /*height: 100%;*/
-    width: 80vw;
+    /*width: 80vw;*/
     background-color: cyan;
-    opacity: .4;
+    opacity: .2;
     top: 27vh;
-    mix-blend-mode: lighten;
+    /*mix-blend-mode: lighten;*/
     transition:all 500ms ease-out;
 }
     .boxPath {
     -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+
     }
     .boxPath:hover {
       -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+      opacity:.9;
     }
 
 
@@ -85,7 +94,11 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 }
-
+.index-layout-style {
+    display: inline-block;
+    width: -webkit-fill-available;
+    margin:0px;
+}
 
 
 /*test purposes

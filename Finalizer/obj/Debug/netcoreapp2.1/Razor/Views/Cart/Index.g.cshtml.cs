@@ -107,7 +107,7 @@ using Finalizer.Models;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(698, 492, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd9a1fa8c937411ba27143d36335bf7a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95cf1a2d7e2f4f52ad9a75ea55dac66f", async() => {
                 BeginContext(735, 50, true);
                 WriteLiteral("\r\n                            <input type=\"hidden\"");
                 EndContext();
@@ -218,7 +218,7 @@ else
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1833, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f51a8b87c2444c58b931e6539aaafa8d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e290bfde06164124a6658bbe068b7afc", async() => {
                 BeginContext(1903, 17, true);
                 WriteLiteral("Go Shop some more");
                 EndContext();
@@ -252,7 +252,7 @@ else
             WriteLiteral("    ");
             EndContext();
             BeginContext(1983, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "011ad251abb348cba892d4fba4cedb41", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a413bba5bc514f7ca8b04cc31f1e2cb4", async() => {
                 BeginContext(2055, 19, true);
                 WriteLiteral("Proceed to Checkout");
                 EndContext();

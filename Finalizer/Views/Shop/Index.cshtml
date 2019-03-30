@@ -5,15 +5,36 @@
 
 @foreach (var category in this.Model)
 {<div>
-    <h2 class="p-2 m-2 border rounded bg-dark text-light" style="display:inline-block">@category.Name</h2>
-    <div class="row">
-        @foreach (var product in category.Products.Take(3))
-        {
-            <div class="col-12 col-sm-4 mx-auto p-2" style="text-align:center">
-                <img class="img-fluid" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
-                <a class="btn btn-block btn-primary" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
+        <h2 class="p-2 bumper border rounded bg-dark text-light index-layout-style">@category.Name</h2>
+        <div class="row">
+            <div class="card-deck">
+                @foreach (var product in category.Products.Take(3))
+                {
+                    @*<div class="col-12 col-sm-4 mx-auto p-2 index-layout-style" style="text-align:center">*@
+                    <div class="card">
+                        <img class="card-img-top" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <a class="btn btn-block btn-primary" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
+                            <div class="card-footer">
+                                <small class="text-secondary">@product.Price.ToString("c")</small>
+                            </div>
+                        </div>
+                    </div>
+
+                }
             </div>
-        }
+            </div>
     </div>
-</div>
 }
+
+@*sample card
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>*@

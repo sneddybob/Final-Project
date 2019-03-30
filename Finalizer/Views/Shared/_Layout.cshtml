@@ -51,7 +51,7 @@
 
     <partial name="_CookieConsentPartial" />
     @RenderSection("FullWidth", required: false)
-    <div class="container">
+    <div class="container-fluid">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -59,7 +59,7 @@
     </div>
     <hr />
     <footer class="@*fixed-bottom*@ border-top bg-light text-muted">
-        <div class="container my-2">
+        <div class="container">
             &copy; 2019 Finalizer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
