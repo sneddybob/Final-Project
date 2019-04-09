@@ -1,0 +1,29 @@
+﻿@model Finalizer.Data.Product
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    if (Model != null && this.Model.Name.ToString().ToUpperInvariant().Contains(@ViewData["searchTerm"].ToString().ToUpperInvariant()))
+    {
+        <div class="row m-0 p-0">
+            <div class="col-lg-6 p-0">
+                <img class="img-fluid" src="@(Model.ProductImages.Any() ? Model.ProductImages.First().Url : "/images/noImage.png")" alt="@(Model.ProductImages.Any() && !string.IsNullOrEmpty(Model.ProductImages.First().AltText) ? Model.ProductImages.First().AltText : Model.Name)" />
+
+            </div>
+            <div class="col-lg-6 p-0">
+                <div>
+                    <h1>@Model.Name</h1>
+                    <p>@Model.Description</p>
+                    <p>@Model.Price</p>
+                </div>
+              </div>
+            
+            </div>
+    }
+
+    else
+    {
+        <div>We Couldn't find any matching products.</div>
+    }
+}
+

@@ -46,6 +46,10 @@
                 </ul>
 
             </div>
+            <form action="/search" method="get" class="form-inline my-2 my-lg-0">
+                <input class="form-control m-1" type="search" placeholder="Search" aria-label="Search" name="searchTerm">
+                <button class="btn btn-outline-dark my-2 my-sm-1" type="submit">Search</button>
+            </form>
         </div>
     </nav>
 
@@ -57,7 +61,7 @@
             @RenderBody()
         </main>
     </div>
-    <hr />
+    @*<hr />*@
     <footer class="@*fixed-bottom*@ border-top bg-light text-muted">
         <div class="container">
             &copy; 2019 Finalizer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

@@ -94,3 +94,4 @@ C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Areas\Ide
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.g.cshtml.cs
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Home\Genre.g.cshtml.cs
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Debug\netcoreapp2.1\Razor\Views\Search\Index.g.cshtml.cs
