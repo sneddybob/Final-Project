@@ -15,6 +15,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.Extensions.Logging;
+using Finalizer.Services;
+using SmartyStreets;
 
 namespace Finalizer
 {
@@ -43,12 +47,42 @@ namespace Finalizer
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+            services.AddTransient<SendGrid.ISendGridClient>((s) =>
+            {
+                return new SendGrid.SendGridClient(Configuration.GetValue<string>("sendgrid:key"));
+            });
+
+            services.AddTransient<IEmailSender>((s) => { return new EmailService(
+                s.GetService<SendGrid.ISendGridClient>(),
+                s.GetService<ILogger<EmailService>>()
+                );
+            });
+
+            services.AddTransient<Braintree.IBraintreeGateway>((s) =>
+            {
+                return new Braintree.BraintreeGateway(
+                    Configuration.GetValue<string>("Braintree:Environment"),
+                    Configuration.GetValue<string>("Braintree:MerchantId"),
+                    Configuration.GetValue<string>("Braintree:PublicKey"),
+                    Configuration.GetValue<string>("Braintree:PrivateKey")
+                );
+            });
+
+            services.AddTransient<SmartyStreets.ClientBuilder>((s) =>
+            {
+                return new SmartyStreets.ClientBuilder(Configuration.GetValue<string>("smarty:AuthID"),
+                    Configuration.GetValue<string>("smarty:AuthToken"));
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"))
+                            //options.UseInMemoryDatabase("default")
+                            );
 
 
-            services.AddDefaultIdentity<RegisteredUser>()
+            services.AddDefaultIdentity<RegisteredUser>((config) => { config.SignIn.RequireConfirmedEmail = true; })
                 .AddRoles<IdentityRole>()   //Turn on Role Support
                 
                 .AddDefaultUI()

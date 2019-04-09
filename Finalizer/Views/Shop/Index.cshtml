@@ -5,24 +5,24 @@
 
 @foreach (var category in this.Model)
 {<div>
-        <h2 class="p-2 bumper border rounded bg-dark text-light index-layout-style">@category.Name</h2>
-        <div class="row">
-            <div class="card-deck">
+        <h2 class="p-2 border  bg-dark text-light index-layout-style">@category.Name</h2>
+        <div class="row m-0">
+            <div class="card-deck m-0 p-0">
                 @foreach (var product in category.Products.Take(3))
                 {
                     @*<div class="col-12 col-sm-4 mx-auto p-2 index-layout-style" style="text-align:center">*@
-                    <div class="card">
-                        <img class="card-img-top" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
-                        <div class="card-body">
-                            <h5 class="card-title">@product.Name</h5>
-                            <p class="card-text">@product.Description</p>
-                            <a class="btn btn-block btn-primary" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
-                            <div class="card-footer">
-                                <small class="text-secondary">@product.Price.ToString("c")</small>
+                    <div class="card  border-1 m-0">
+                        <img class="card-img-top p-0 m-0" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
+                        <div class="card-body p-0 m-0">
+                            <h5 class="card-title m-1">@product.Name</h5>
+                            <p class="card-text m-1">@product.Description</p>
+                            <a class="btn btn-block btn-dark" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
+                            <div class="card-footer m-1">
+                                <small class="text-secondary m-1">@product.Price.ToString("c")</small>
                             </div>
                         </div>
                     </div>
-
+                        @*</div>*@
                 }
             </div>
             </div>

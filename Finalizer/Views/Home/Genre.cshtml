@@ -1,0 +1,11 @@
+﻿@model GenreViewModel
+@{
+    ViewData["Title"] = "Genre";
+}
+
+<h2>The latest genres people are talking about:</h2>
+@foreach ( var story in Model.response)
+{
+    <h5>@story</h5>
+}
+

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "eff827c6e17514e96cfd6ca30ae2072f8be63eae"
+    "signature": "b1d7657c96716bceb55ed57dbec669b73eb42d4c"
   },
   "compilationOptions": {
     "defines": [
@@ -24,16 +24,34 @@
     ".NETCoreApp,Version=v2.1": {
       "Finalizer/1.0.0": {
         "dependencies": {
+          "Braintree": "4.11.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.7"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.7",
+          "Sendgrid": "9.10.0",
+          "smartystreets-dotnet-sdk": "8.2.0"
         },
         "runtime": {
           "Finalizer.dll": {}
         },
         "compile": {
           "Finalizer.dll": {}
+        }
+      },
+      "Braintree/4.11.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
+          "System.Xml.XPath.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Braintree.dll": {
+            "assemblyVersion": "4.11.0.0",
+            "fileVersion": "4.11.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Braintree.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -377,6 +395,32 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "Sendgrid/9.10.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.10.0.0",
+            "fileVersion": "9.10.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
+      "smartystreets-dotnet-sdk/8.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/smartystreets-dotnet-sdk.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/smartystreets-dotnet-sdk.dll": {}
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -512,6 +556,29 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Xml.XPath.XmlDocument/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.XPath": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
+          }
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3462,6 +3529,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Braintree/4.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DFqrJYijIJ3rpvUeXZg3ayKlb6TnVXg5F8NF8b627XQ7LaulT04xpUSSsxsH+Zno8eQmkltTi0dEw2w3WjqTJQ==",
+      "path": "braintree/4.11.0",
+      "hashPath": "braintree.4.11.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3595,6 +3669,20 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
+    "Sendgrid/9.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i6208SyPFvZ5bJRUbOimhBF/axjhiS4xQX71+KWPhzWUJGHbGX+yfwPrUg5y0D3deQlQz94mHeWF6AGHSZ81jQ==",
+      "path": "sendgrid/9.10.0",
+      "hashPath": "sendgrid.9.10.0.nupkg.sha512"
+    },
+    "smartystreets-dotnet-sdk/8.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e7f3NgHWlOKKQWchQIrcw26asHH/4hvoivh2DZPeypoqyvVhK12laIpAHxxx04JyV/Q1DAQ3BFYXH1c7hBuByw==",
+      "path": "smartystreets-dotnet-sdk/8.2.0",
+      "hashPath": "smartystreets-dotnet-sdk.8.2.0.nupkg.sha512"
+    },
     "System.Composition/1.0.31": {
       "type": "package",
       "serviceable": true,
@@ -3643,6 +3731,13 @@
       "sha512": "sha512-td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "System.Xml.XPath.XmlDocument/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-91tvfHWHSrYFPolCwWYqbpo1YaoBUCQ3uNZ/O/zr0ev5BnkoATJoie16ywlMVUaXZtfSfNELxhtG3aqpTfwR4w==",
+      "path": "system.xml.xpath.xmldocument/4.3.0",
+      "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
