@@ -5,13 +5,12 @@
 
 @foreach (var category in this.Model)
 {<div>
-        <h2 class="p-2 border  bg-dark text-light index-layout-style">@category.Name</h2>
+        <h2 class="p-2  bg-dark text-light index-layout-style">@category.Name</h2>
         <div class="row m-0">
             <div class="card-deck m-0 p-0">
                 @foreach (var product in category.Products.Take(3))
                 {
-                    @*<div class="col-12 col-sm-4 mx-auto p-2 index-layout-style" style="text-align:center">*@
-                    <div class="card  border-1 m-0">
+                       <div class="card mb-0">
                         <img class="card-img-top p-0 m-0" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
                         <div class="card-body p-0 m-0">
                             <h5 class="card-title m-1">@product.Name</h5>
@@ -22,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                        @*</div>*@
+                  
                 }
             </div>
             </div>

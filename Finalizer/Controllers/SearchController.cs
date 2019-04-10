@@ -30,11 +30,11 @@ namespace Finalizer.Controllers
         public IActionResult Index(string searchTerm)
         {
             ViewData ["searchTerm"] = searchTerm;
-            Product productToFind = _context.Products
+            IEnumerable <Product> productToFind = _context.Products
                .Include(product => product.Reviews)
                .Include(product => product.ProductColors)
                .Include(product => product.ProductImages)
-               .Include(product => product.Category).FirstOrDefault(product => product.Name.Contains(searchTerm));
+               .Include(product => product.Category).Where(product => product.Name.Contains(searchTerm)||product.Description.Contains(searchTerm));
             
 
             return View(productToFind);

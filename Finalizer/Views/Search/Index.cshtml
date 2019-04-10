@@ -1,29 +1,39 @@
-﻿@model Finalizer.Data.Product
+﻿@model IEnumerable<Finalizer.Data.Product>
 @{
     ViewData["Title"] = "Index";
 }
 @{
-    if (Model != null && this.Model.Name.ToString().ToUpperInvariant().Contains(@ViewData["searchTerm"].ToString().ToUpperInvariant()))
+    if (Model != null)
     {
-        <div class="row m-0 p-0">
-            <div class="col-lg-6 p-0">
-                <img class="img-fluid" src="@(Model.ProductImages.Any() ? Model.ProductImages.First().Url : "/images/noImage.png")" alt="@(Model.ProductImages.Any() && !string.IsNullOrEmpty(Model.ProductImages.First().AltText) ? Model.ProductImages.First().AltText : Model.Name)" />
+        <div>
+            <h2>Here are your results for @ViewData["searchTerm"].ToString()</h2>
+        </div>
+        <div>
+            <h2 class="p-2  bg-dark text-light index-layout-style"></h2>
+            <div class="row m-0">
+                <div class="card-deck m-0 p-0">
+                    @foreach (var product in this.Model)
+                    {
+                        <div class="card  border-1 m-0">
+                            <img class="card-img-top p-0 m-0" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
+                            <div class="card-body p-0 m-0">
+                                <h5 class="card-title m-1">@product.Name</h5>
+                                <p class="card-text m-2">@product.Description</p>
+                                <a class="btn btn-block btn-dark" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
+                                <div class="card-footer m-1">
+                                    <small class="text-secondary m-1">@product.Price.ToString("c")</small>
+                                </div>
+                            </div>
+                        </div>
 
-            </div>
-            <div class="col-lg-6 p-0">
-                <div>
-                    <h1>@Model.Name</h1>
-                    <p>@Model.Description</p>
-                    <p>@Model.Price</p>
+                    }
                 </div>
-              </div>
-            
             </div>
+        </div>
     }
-
     else
     {
-        <div>We Couldn't find any matching products.</div>
+        <div> We Couldn't find any matching products.</div>
     }
 }
 
