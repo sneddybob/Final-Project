@@ -2,7 +2,7 @@
 @using Finalizer.Data
 @model CheckoutViewModel
 @inject SignInManager<RegisteredUser> SignInManager
-@inject UserManager<RegisteredUser> UserManager
+
 @{
     ViewData["Title"] = "Checkout";
 }
@@ -162,7 +162,7 @@
 }
 else
 {
-    <a asp-area="Identity" asp-page="/Account/Register" class="text-primary">Please register an account to complete your order.</a>
+    <a asp-area="Identity" asp-page="/Account/Register" class="text-primary">Please register an account or login to complete your order.</a>
 }
 
 @section Scripts{

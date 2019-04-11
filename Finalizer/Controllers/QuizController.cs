@@ -30,17 +30,27 @@ namespace Finalizer.Controllers
         [HttpPost]
         public IActionResult Index(int Radios1, int Radios2, int Radios3, int Radios4)
         {
+            var localID = (Radios1 + Radios2 + Radios3 + Radios4);
+            if(localID == 0)
+            {
+                localID = 1;
+            }
+            else
+            {
+                localID = (localID / 4);
+            }
 
-            //if(Radios1 + Radios2 == 5)
-            //{
 
-            //}
-            return RedirectToAction("Results", new { id = ((Radios1+Radios2+Radios3+Radios4)/4)});
+            return RedirectToAction("Results", localID);
         }
 
 
         public IActionResult Results(int? id)
         {
+            if (id == null)
+            {
+                id = 1;
+            }
             Product productToFind = _context.Products
                .Include(product => product.Reviews)
                .Include(product => product.ProductColors)

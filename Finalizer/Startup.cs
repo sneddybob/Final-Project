@@ -74,7 +74,12 @@ namespace Finalizer
                 return new SmartyStreets.ClientBuilder(Configuration.GetValue<string>("smarty:AuthID"),
                     Configuration.GetValue<string>("smarty:AuthToken"));
             });
-
+            services.AddTransient<IEmailSender>((s) => {
+                return new EmailService(
+                        s.GetService<SendGrid.ISendGridClient>(),
+                        s.GetService<ILogger<EmailService>>()
+                    );
+            });
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"))
