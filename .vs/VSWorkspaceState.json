@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Finalizer",
+    "\\Finalizer\\Areas",
+    "\\Finalizer\\Areas\\Identity",
+    "\\Finalizer\\Areas\\Identity\\Pages",
+    "\\Finalizer\\Areas\\Identity\\Pages\\Account"
+  ],
+  "SelectedNode": "\\Finalizer\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+  "PreviewInSolutionExplorer": false
+}

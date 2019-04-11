@@ -55,3 +55,5 @@ C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Finalizer.dll
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Finalizer.pdb
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Finalizer.csproj.CopyComplete
 C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Razor\Views\Search\Index.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+C:\Users\Bob\Desktop\Finalizer\Finalizer\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
