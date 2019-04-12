@@ -8,6 +8,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
    margin:0px;
    padding:0px;
+   min-height:100vh;
 }
 .btn-link{
     color:grey;
@@ -48,7 +49,7 @@ body {
     content: '';
     height: 100%;
     /*width: 80vw;*/
-    background-color: cyan;
+    /*background-color: cyan;*/
     opacity: 0;
     top: 27vh;
     mix-blend-mode: lighten;
@@ -63,9 +64,20 @@ body {
     .boxPath:hover {
      //-webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
       opacity:.7;
-      background-color:red;
-      background:repeating-linear-gradient(red,orange,yellow,white);
+      background:linear-gradient(red,orange,yellow,white);
       text-decoration:solid;
+     
+    }
+    .boxPath2 {
+    //-webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+    text-decoration: none;
+}
+
+    .boxPath2:hover {
+        //-webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+        opacity: .7;
+        background:transparent;
+        text-decoration: solid;
     }
     
     
@@ -95,7 +107,19 @@ body {
     z-index:11;      
 
  }
-
+h2 {
+    text-indent: 8vw;
+    background: repeating-linear-gradient(to right,black,grey,white);
+    position:sticky;
+    top:9vh;
+    z-index:50;
+    
+}
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 16px;
+    }
+}
 .gridlayout {
     display: grid;
     grid-template-columns: 1fr;

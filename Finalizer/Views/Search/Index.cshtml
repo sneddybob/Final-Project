@@ -6,7 +6,7 @@
     if (Model != null)
     {
         <div>
-            <h2>Here are your results for @ViewData["searchTerm"].ToString()</h2>
+            <h3>Here are your results for @ViewData["searchTerm"].ToString()</h3>
         </div>
         <div>
             <h2 class="p-2  bg-dark text-light index-layout-style"></h2>
@@ -20,7 +20,7 @@
                                 <h5 class="card-title m-1">@product.Name</h5>
                                 <p class="card-text m-2">@product.Description</p>
                                 <a class="btn btn-block btn-dark" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
-                                <div class="card-footer m-1">
+                                <div class="card-footer m-1 mb-4">
                                     <small class="text-secondary m-1">@product.Price.ToString("c")</small>
                                 </div>
                             </div>
