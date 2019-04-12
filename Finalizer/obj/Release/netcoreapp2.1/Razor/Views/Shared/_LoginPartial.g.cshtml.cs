@@ -107,12 +107,12 @@ using Finalizer.Services;
             WriteLiteral("    ");
             EndContext();
             BeginContext(577, 816, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ae34acd1a924aa08c24219820bc782c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c68f3234b4094749b68cddd640e63529", async() => {
                 BeginContext(751, 86, true);
                 WriteLiteral("\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n                ");
                 EndContext();
                 BeginContext(837, 109, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da942af7c7fb41e5aa6e585a09425396", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2fd005325a104b9da8b0afae07622673", async() => {
                     BeginContext(935, 7, true);
                     WriteLiteral("Profile");
                     EndContext();
@@ -138,7 +138,7 @@ using Finalizer.Services;
                 WriteLiteral("\r\n            </li>\r\n            <li>\r\n                <button type=\"submit\" class=\"btn btn-link navbar-btn navbar-link text-dark\">Logout</button>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                ");
                 EndContext();
                 BeginContext(1164, 182, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7dc991f26694087b65654abf5c2db50", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d084a24b901485fa68a0a6182bd1b8f", async() => {
                     BeginContext(1247, 52, true);
                     WriteLiteral("Cart <span class=\"badge badge-secondary cart-count\">");
                     EndContext();
@@ -223,7 +223,7 @@ else
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\r\n        <li>");
             EndContext();
             BeginContext(1465, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb6aee53067946df842371607d8c8f6d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19348dd997c44e33b3a66fd4bdf96a79", async() => {
                 BeginContext(1534, 8, true);
                 WriteLiteral("Register");
                 EndContext();
@@ -248,7 +248,7 @@ else
             WriteLiteral("</li>\r\n        <li>");
             EndContext();
             BeginContext(1565, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc22e84e2af44567ac650e14b0c237eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92c87f77aa5b4285997a5b277be3ed65", async() => {
                 BeginContext(1631, 5, true);
                 WriteLiteral("Login");
                 EndContext();

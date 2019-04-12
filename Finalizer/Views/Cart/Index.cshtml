@@ -27,8 +27,8 @@
                             <form class="form-row" method="post">
                                 <input type="hidden" value="@item.ID" name="cartItemId" />
                                 <input class="col form-control" type="number" name="quantity" value="@item.Quantity" min="0" />
-                                <input type="submit" class="col btn btn-secondary" value="Update" />
-                                <button class="col btn btn-danger" onclick="removeProduct(event)">Remove</button>
+                                <input type="submit" class="col btn btn-secondary" value="Update Quantity" />
+                                <button class="col btn btn-danger" onclick="removeProduct(event)">X</button>
                             </form>
                         </td>
                         <td>@(item.ProductColor == null ? "N/A" : item.ProductColor.Color)</td>
