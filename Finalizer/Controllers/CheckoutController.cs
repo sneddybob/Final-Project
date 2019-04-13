@@ -182,7 +182,7 @@ namespace Finalizer.Controllers
                                 order.RegisteredUser = registeredUser;
                             }
                             _context.SaveChanges();
-                            await _emailSender.SendEmailAsync(model.ContactEmail, "Receipt for order #" + order.ID, "Thanks for your order!");
+                            await _emailSender.SendEmailAsync(model.ContactEmail, "Receipt for order #" + order.ID, order.ContactName+" thanks for your order!  Your "+order.OrderItems.Select(x=> x.Name) +" will be sent to "+order.ShippingStreet1+".");
                             return RedirectToAction("index", "receipt", new { id = order.ID });
                         }
                         ModelState.AddModelError("cart", "There was a problem processing your cart");

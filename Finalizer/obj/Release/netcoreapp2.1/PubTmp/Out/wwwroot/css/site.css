@@ -4,7 +4,9 @@ for details on configuring this project to bundle and minify static web assets. 
     font-family: 'Nunito', sans-serif;
     
 }
-
+#home-nav:hover{
+    background:white;
+}
 body {
    margin:0px;
    padding:0px;
@@ -70,6 +72,7 @@ body {
     }
     .boxPath2 {
     //-webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+    max-height:75%;
     text-decoration: none;
 }
 
@@ -133,7 +136,10 @@ h2 {
     margin-right:5px;
     margin-left: 5px;
 }
-
+.logo{
+    top:2vh;
+    max-height:10vh;
+  }
 /*test purposes
 .shape {
     width: 150px;

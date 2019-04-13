@@ -29,15 +29,31 @@ namespace Finalizer.Controllers
         
         public IActionResult Index(string searchTerm)
         {
-            ViewData ["searchTerm"] = searchTerm;
-            IEnumerable <Product> productToFind = _context.Products
-               .Include(product => product.Reviews)
-               .Include(product => product.ProductColors)
-               .Include(product => product.ProductImages)
-               .Include(product => product.Category).Where(product => product.Name.Contains(searchTerm)||product.Description.Contains(searchTerm));
-            
+            if (ViewData["searchTerm"] != null)
+            {
 
-            return View(productToFind);
+                ViewData["searchTerm"] = searchTerm;
+                IEnumerable<Product> productToFind = _context.Products
+                   .Include(product => product.Reviews)
+                   .Include(product => product.ProductColors)
+                   .Include(product => product.ProductImages)
+                   .Include(product => product.Category).Where(product => product.Name.Contains(searchTerm) || product.Description.Contains(searchTerm));
+
+                return View(productToFind);
+            }
+            else
+            {
+                ViewData["searchTerm"] = "nothing entered...";
+                IEnumerable<Product> productToFind = _context.Products
+                   .Include(product => product.Reviews)
+                   .Include(product => product.ProductColors)
+                   .Include(product => product.ProductImages)
+                   .Include(product => product.Category).Where(product => product.Name.Contains(searchTerm) || product.Description.Contains(searchTerm));
+
+                return View(productToFind);
+            }
+
+           
         }
 
     }
