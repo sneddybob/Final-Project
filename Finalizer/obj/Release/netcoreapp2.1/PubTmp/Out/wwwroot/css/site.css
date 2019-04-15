@@ -65,8 +65,8 @@ body {
     }
     .boxPath:hover {
      //-webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-      opacity:.7;
-      background:linear-gradient(red,orange,yellow,white);
+      opacity:.9;
+      background:radial-gradient(red,orange,yellow,white);
       text-decoration:solid;
      
     }
@@ -78,7 +78,7 @@ body {
 
     .boxPath2:hover {
         //-webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-        opacity: .7;
+        opacity: .99;
         background:transparent;
         text-decoration: solid;
     }
@@ -123,6 +123,11 @@ h2 {
         font-size: 16px;
     }
 }
+.form-control:focus {
+    box-shadow: none;
+    border-color: darkgrey;
+    outline:1rem;
+}
 .gridlayout {
     display: grid;
     grid-template-columns: 1fr;
@@ -140,6 +145,9 @@ h2 {
     top:2vh;
     max-height:10vh;
   }
+.searchBTN{
+    padding:0px;
+}
 /*test purposes
 .shape {
     width: 150px;
