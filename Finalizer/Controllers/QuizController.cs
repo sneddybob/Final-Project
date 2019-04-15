@@ -30,6 +30,7 @@ namespace Finalizer.Controllers
         [HttpPost]
         public IActionResult Index(int Radios1, int Radios2, int Radios3, int Radios4)
         {
+            
             var localID = (Radios1 + Radios2 + Radios3 + Radios4);
             if(localID == 0)
             {
@@ -41,16 +42,13 @@ namespace Finalizer.Controllers
             }
 
 
-            return RedirectToAction("Results", localID);
+            return RedirectToAction("Results", new { id = localID });
         }
 
 
         public IActionResult Results(int? id)
         {
-            if (id == null)
-            {
-                id = 1;
-            }
+           
             Product productToFind = _context.Products
                .Include(product => product.Reviews)
                .Include(product => product.ProductColors)
