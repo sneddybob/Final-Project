@@ -29,7 +29,7 @@ namespace Finalizer.Controllers
         
         public IActionResult Index(string searchTerm)
         {
-            if (ViewData["searchTerm"] != null)
+            if(searchTerm != null)
             {
 
                 ViewData["searchTerm"] = searchTerm;
@@ -43,7 +43,7 @@ namespace Finalizer.Controllers
             }
             else
             {
-                ViewData["searchTerm"] = "nothing entered...";
+                ViewData["searchTerm"] = "...";
                 IEnumerable<Product> productToFind = _context.Products
                    .Include(product => product.Reviews)
                    .Include(product => product.ProductColors)
