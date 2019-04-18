@@ -7,6 +7,10 @@ for details on configuring this project to bundle and minify static web assets. 
 #home-nav:hover{
     background:white;
 }
+
+.acc{
+    width: 66vw;
+}
 body {
    margin:0px;
    padding:0px;
@@ -16,7 +20,7 @@ body {
     color:grey;
 }
 
-.card{
+.cardG{
     border:none;
     max-width:22vw;
   }
