@@ -30,6 +30,9 @@ body {
     //max-width:22vw;
 }
 
+.card-text{
+    height:3.5rem;
+}
 .container-fluid{
     margin-right:0px;
     margin-left:0px;

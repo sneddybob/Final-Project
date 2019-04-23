@@ -18,7 +18,7 @@
                             <img class="card-img-top p-0 m-0" src="@(product.ProductImages.Any() ? product.ProductImages.First().Url : "/images/noImage.png")" alt="@(product.ProductImages.Any() && !string.IsNullOrEmpty(product.ProductImages.First().AltText) ? product.ProductImages.First().AltText : product.Name)" />
                             <div class="card-body p-0 m-0">
                                 <h5 class="card-title ml-2">@product.Name</h5>
-                                <p class="card-text ml-2">@product.Description</p>
+                                <p class="card-text ml-2 pb-4">@product.Description</p>
                                 <a class="btn btn-block btn-dark" asp-controller="shop" asp-action="details" asp-route-id="@product.ID">View @product.Name</a>
                                 <div class="card-footer mb-5">
                                     <small class="text-secondary m-0">@product.Price.ToString("c")</small>
