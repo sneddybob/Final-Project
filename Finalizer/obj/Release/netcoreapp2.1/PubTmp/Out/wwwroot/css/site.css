@@ -7,6 +7,7 @@ for details on configuring this project to bundle and minify static web assets. 
 #home-nav:hover{
     background:white;
 }
+
 body {
    margin:0px;
    padding:0px;
@@ -16,13 +17,17 @@ body {
     color:grey;
 }
 
-.card{
+.cardG{
     border:none;
-    max-width:22vw;
+    //max-width:22vw;
   }
+.cardQ {
+    border: none;
+    max-width: 82vw;
+}
 
 .card-img-top{
-    max-width:22vw;
+    //max-width:22vw;
 }
 
 .container-fluid{
